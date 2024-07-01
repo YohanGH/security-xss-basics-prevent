@@ -50,6 +50,19 @@
             log.innerHTML = e.target.value;
         }
 
+					function updateValue(e) {
+				log.innerHTML = escapeHtml(e.target.value);
+			}
+
+			function escapeHtml(unsafe) {
+				return unsafe
+					.replace(/&/g, "&amp;")
+					.replace(/</g, "&lt;")
+					.replace(/>/g, "&gt;")
+					.replace(/"/g, "&quot;")
+					.replace(/'/g, "&#039;");
+			}
+
     </script>
 
 </body>
